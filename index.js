@@ -17,24 +17,31 @@ class Sprite {
     constructor({ position, velocity, color = 'red' }) {
         this.position = position;
         this.velocity = velocity;
-        this.height = 150
+        this.width = 50;
+        this.height = 150;
         this.lastKey
         this.attackBox = {
             position: this.position,
             width: 100,
             height: 50
         }
-        this.color = color
+        this.color = color;
+        this.isAttacking;
     };
 
     //this draws the player
     draw() {
         c.fillStyle = this.color;
-        c.fillRect(this.position.x, this.position.y, 50, this.height);
+        c.fillRect(this.position.x, this.position.y, this.width, this.height);
         
         // attack box
         c.fillStyle = 'green'
-        c.fillRect(this.attackBox.position.x, this.attackBox.position.y, this.attackBox.width, this.attackBox.height)
+        c.fillRect(
+            this.attackBox.position.x,
+            this.attackBox.position.y,
+            this.attackBox.width,
+            this.attackBox.height
+        )
     };
 
     // this method updates properties inside the screen
@@ -49,6 +56,13 @@ class Sprite {
             this.velocity.y += gravity;
         }
     }
+
+    attack() {
+        this.isAttacking = true;
+        setTimeout(() => {
+            this.isAttacking = false
+        }, 100)
+    };
 };
 
 // this starts our player at the top left portion of the canvas
@@ -121,9 +135,15 @@ function animate() {
     }
 
     // detect for collision
-    if (player.attackBox.position.x + player.attackBox.width >= enemy.position.x) {
+    if (player.attackBox.position.x + player.attackBox.width >= enemy.position.x && 
+        player.attackBox.position.x <= enemy.position.x + enemy.width &&
+        player.attackBox.position.y + player.attackBox.height >= enemy.position.y &&
+        player.attackBox.position.y <= enemy.position.y + enemy.height &&
+        player.isAttacking
+        ) {
+        player.isAttacking = false;
         console.log('go')
-    }
+    };
 };
 
 animate();
@@ -142,6 +162,9 @@ window.addEventListener('keydown', (event) => {
             break
         case 'w':
             player.velocity.y = -20
+            break
+        case ' ':
+            player.attack()
             break
 
         //enemy keys
