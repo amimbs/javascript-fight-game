@@ -14,17 +14,27 @@ c.fillRect(0, 0, canvas.width, canvas.height);
 const gravity = 0.7;
 
 class Sprite {
-    constructor({ position, velocity }) {
+    constructor({ position, velocity, color = 'red' }) {
         this.position = position;
         this.velocity = velocity;
         this.height = 150
         this.lastKey
+        this.attackBox = {
+            position: this.position,
+            width: 100,
+            height: 50
+        }
+        this.color = color
     };
 
     //this draws the player
     draw() {
-        c.fillStyle = 'red';
+        c.fillStyle = this.color;
         c.fillRect(this.position.x, this.position.y, 50, this.height);
+        
+        // attack box
+        c.fillStyle = 'green'
+        c.fillRect(this.attackBox.position.x, this.attackBox.position.y, this.attackBox.width, this.attackBox.height)
     };
 
     // this method updates properties inside the screen
@@ -61,7 +71,8 @@ const enemy = new Sprite({
     velocity: {
         x: 0,
         y: 0
-    }
+    },
+    color: 'blue'
 });
 
 console.log(player);
@@ -107,6 +118,11 @@ function animate() {
         enemy.velocity.x = -5
     } else if (keys.ArrowRight.pressed && enemy.lastKey === 'ArrowRight') {
         enemy.velocity.x = 5
+    }
+
+    // detect for collision
+    if (player.attackBox.position.x + player.attackBox.width >= enemy.position.x) {
+        console.log('go')
     }
 };
 
