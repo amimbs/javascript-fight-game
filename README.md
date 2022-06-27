@@ -2,7 +2,7 @@
 
 ![Banner](./img/banner.JPG)
 
-##Table of Contents
+## Table of Contents
 * [General Info](#general-info)
 * [Goals](*goals)
 * [Local Installation](#local-installation)
@@ -51,5 +51,5 @@ cd img
 [Kenji Battle](https://kenji-battle.netlify.app/)
 
 <video autoplay loop muted playsinline>
-<source src="./img/fightinggame.webm" type="video/webm">
+<source src="./img/fightinggame.mp4" type="video/webm">
 </video>
