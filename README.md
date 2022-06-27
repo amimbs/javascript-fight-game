@@ -1,6 +1,6 @@
 # :japanese_ogre: Kenji Battle
 
-![Banner] (./img/banner.JPG)
+![Banner](./img/banner.JPG)
 
 ##Table of Contents
 * [General Info](#general-info)
@@ -49,4 +49,7 @@ cd img
 
 ## Try It Out
 [Kenji Battle](https://kenji-battle.netlify.app/)
-![Kenji Demo](./img/fightinggame.webm)
+
+<video autoplay loop muted playsinline>
+<source src="./img/fightinggame.webm" type="video/webm">
+</video>
