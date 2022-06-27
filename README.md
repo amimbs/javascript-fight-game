@@ -50,7 +50,7 @@ cd img
 ## Try It Out
 [Kenji Battle](https://kenji-battle.netlify.app/)
 
-![video](./img/fightinggame.mp4)
+[!(renamed webm)](./img/fightinggame.mp4)
 
 <!-- <video autoplay loop muted playsinline>
 <source src="./img/fightinggame.mp4" type="video/mp4">
