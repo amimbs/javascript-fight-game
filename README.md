@@ -51,7 +51,3 @@ cd img
 [Kenji Battle](https://kenji-battle.netlify.app/)
 
 https://user-images.githubusercontent.com/85318939/176019313-1490d8d2-ed2c-4239-9e4e-13697e890f9d.mp4
-
-<!-- <video autoplay loop muted playsinline>
-<source src="./img/fightinggame.mp4" type="video/mp4">
-</video> -->
