@@ -40,7 +40,7 @@ cd img
 
 ## Built With:
 - HTML
-- HTML Cnavas
+- HTML Canvas
 - JavaScript
 - [Sprites and Images](https://itch.io/)
     - [Samurai Mack](https://luizmelo.itch.io/martial-hero)
